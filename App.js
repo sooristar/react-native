@@ -7,14 +7,15 @@ function HomeScreen({navigation}){
     return(
         <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
             <Text>HomeScreen</Text>
-            <Button title='go to Detail' onPress={()=> navigation.navigate('Detail')}/>
+            <Button title='go to Detail' onPress={()=> navigation.navigate('Detail',{itemId:86,otherParam:'anything you want here',})}/>
             <Button title='go to Detail again' onPress={()=> navigation.push('Detail')}/>
             <Button title='go Home' onPress={()=> navigation.navigate('Home')}/>
         </View>
     );
 };
 
-function DetailScreen({navigation}){
+function DetailScreen({route, navigation}){
+    const{itemId,otherParam}=route.params;
     return(
         <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
             <Text>DetailScreen</Text>
